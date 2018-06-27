@@ -1,0 +1,23 @@
+{
+  "name": "custom-rich-presence-discord-game",
+  "version": "1.0.0",
+  "author": "Tundra Fizz",
+  "description": "Allows you to display custom rich presence games in Discord",
+  "main": "main.js",
+  "bin": "main.js",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "latest",
+    "express": "latest"
+  },
+  "scripts": {
+    "start": "node main.js"
+  },
+  "pkg": {
+    "assets": ["views", "static"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TundraFizz/Custom-Rich-Presence-Discord-Game"
+  }
+}
