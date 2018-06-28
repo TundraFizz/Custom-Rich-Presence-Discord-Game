@@ -11,9 +11,11 @@ $(".go").click(function(){
     "msg" : msg
   };
 
-  $.post("test", obj, function(res){
-    // alert(JSON.stringify(res));
-  });
+  $.post("test", obj);
+});
+
+$(".stop").click(function(){
+  $.post("stop");
 });
 
 });
