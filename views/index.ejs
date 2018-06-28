@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>NodeJS Example</title>
+    <meta charset="utf-8">
+    <meta name="description"  content="This is the index">
+    <meta name="author"       content="Tundra Fizz">
+    <link rel="shortcut icon" href="/img/icon.jpg">
+    <link rel="stylesheet"    href="/css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+  </head>
+
+  <body>
+    <% for(var i = 0; i < games.length; i++){ var game = games[i]; %>
+      <%if(i>0){%><hr><%}%>
+      <div qwe=<%= game["id"] %>>
+        <span><%= game["name"] %></span>
+        <!-- <span><%= game["id"] %></span> -->
+
+        <div>Top text</div>
+        <% for(var j = 0; j < game["top"].length; j++){ var top = game["top"][j]; %>
+          <div class="go" type="top"><%= top %></div>
+        <% } %>
+
+        <div>Bot text</div>
+        <% for(var j = 0; j < game["bot"].length; j++){ var bot = game["bot"][j]; %>
+          <div class="go" type="bot"><%= bot %></div>
+        <% } %>
+      </div>
+    <% } %>
+  </body>
+</html>
