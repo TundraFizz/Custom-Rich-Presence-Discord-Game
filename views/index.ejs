@@ -14,19 +14,25 @@
   <body>
     <% for(var i = 0; i < games.length; i++){ var game = games[i]; %>
       <%if(i>0){%><hr><%}%>
-      <div qwe=<%= game["id"] %>>
+      <div id=<%= game["id"] %>>
         <span><%= game["name"] %></span>
-        <!-- <span><%= game["id"] %></span> -->
+        <div>Top text
+          <select class="top">
+            <% for(var j = 0; j < game["top"].length; j++){ var top = game["top"][j]; %>
+              <option><%= top %></option>
+            <% } %>
+          </select>
+        </div>
 
-        <div>Top text</div>
-        <% for(var j = 0; j < game["top"].length; j++){ var top = game["top"][j]; %>
-          <div class="go" type="top"><%= top %></div>
-        <% } %>
+        <div>Bot text
+          <select class="bot">
+            <% for(var j = 0; j < game["bot"].length; j++){ var bot = game["bot"][j]; %>
+              <option><%= bot %></option>
+            <% } %>
+          </select>
+        </div>
 
-        <div>Bot text</div>
-        <% for(var j = 0; j < game["bot"].length; j++){ var bot = game["bot"][j]; %>
-          <div class="go" type="bot"><%= bot %></div>
-        <% } %>
+        <div class="submit">SUBMIT</div>
       </div>
     <% } %>
 
