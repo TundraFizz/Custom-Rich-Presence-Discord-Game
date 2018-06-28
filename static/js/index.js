@@ -1,17 +1,17 @@
 $(function(){
 
-$(".go").click(function(){
-  var id   = $(this).parent().attr("qwe");
-  var type = $(this).attr("type");
-  var msg  = $(this).text();
+$(".submit").click(function(){
+  var id  = $(this).parent().attr("id");
+  var top = $($(".top", $(this).parent())[0]).val();
+  var bot = $($(".bot", $(this).parent())[0]).val();
 
-  var obj = {
-    "id"  : id,
-    "type": type,
-    "msg" : msg
-  };
+  console.log(top);
 
-  $.post("test", obj);
+  $.post("test", {
+    "id" : id,
+    "top": top,
+    "bot": bot
+  });
 });
 
 $(".stop").click(function(){
