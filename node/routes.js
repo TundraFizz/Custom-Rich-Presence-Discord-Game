@@ -3,16 +3,9 @@ var DiscordRPC = require("discord-rpc");
 var rpc        = new DiscordRPC.Client({"transport": "ipc"});
 
 app.post("/test", function(req, res){
-
-  var id   = req["body"]["id"];
-  var type = req["body"]["type"];
-  var msg  = req["body"]["msg"];
-
-  var details = "SAMPLE_TEXT";
-  var state   = "SAMPLE_TEXT";
-
-  if(type == "top") details = msg;
-  if(type == "bot") state   = msg;
+  var id      = req["body"]["id"];
+  var details = req["body"]["top"];
+  var state   = req["body"]["bot"];
 
   if(rpc["clientID"] == null){
     // New game from no game
