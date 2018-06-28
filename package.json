@@ -1,27 +1,25 @@
 {
-  "name": "custom-rich-presence-discord-game",
+  "name": "nodejs-skeleton",
   "version": "1.0.0",
+  "description": "The simplest NodeJS web application possible while using Express.",
+  "main": "server.js",
   "author": "Tundra Fizz",
-  "description": "Allows you to display custom rich presence games in Discord",
-  "main": "main.js",
-  "bin": "main.js",
   "license": "ISC",
   "dependencies": {
-    "ejs": "latest",
     "express": "latest",
+    "ejs":     "latest",
     "discord-rpc": "latest"
   },
+  "dependencies-comments": {
+    "express": "Web framework",
+    "ejs":     "Templating engine"
+  },
   "scripts": {
-    "start": "node main.js"
+    "start": "node server.js"
   },
-  "pkg": {
-    "assets": [
-      "views",
-      "static"
-    ]
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/TundraFizz/Custom-Rich-Presence-Discord-Game"
+    "url": "https://github.com/TundraFizz/NodeJS-Skeleton.git"
   }
 }
