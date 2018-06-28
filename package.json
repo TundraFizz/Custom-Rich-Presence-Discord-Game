@@ -8,13 +8,17 @@
   "license": "ISC",
   "dependencies": {
     "ejs": "latest",
-    "express": "latest"
+    "express": "latest",
+    "discord-rpc": "latest"
   },
   "scripts": {
     "start": "node main.js"
   },
   "pkg": {
-    "assets": ["views", "static"]
+    "assets": [
+      "views",
+      "static"
+    ]
   },
   "repository": {
     "type": "git",
