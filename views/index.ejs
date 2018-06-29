@@ -16,28 +16,39 @@
       <%if(i>0){%><hr><%}%>
       <div id=<%= game["id"] %>>
         <span><%= game["name"] %></span>
-        <div>Top text
-          <select class="top">
-            <% for(var j = 0; j < game["top"].length; j++){ var top = game["top"][j]; %>
-              <option><%= top %></option>
-            <% } %>
-          </select>
-        </div>
 
-        <div>Bot text
-          <select class="bot">
-            <% for(var j = 0; j < game["bot"].length; j++){ var bot = game["bot"][j]; %>
-              <option><%= bot %></option>
-            <% } %>
-          </select>
-        </div>
+        <table>
+          <thead></thead>
+          <tbody>
+            <tr>
+              <td>Top Text</td>
+              <td>
+                <select class="top">
+                  <% for(var j = 0; j < game["top"].length; j++){ var top = game["top"][j]; %>
+                    <option><%= top %></option>
+                  <% } %>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Bot Text</td>
+              <td>
+                <select class="bot">
+                  <% for(var j = 0; j < game["bot"].length; j++){ var bot = game["bot"][j]; %>
+                    <option><%= bot %></option>
+                  <% } %>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-        <div class="submit">SUBMIT</div>
+        <div class="submit button">SUBMIT</div>
       </div>
     <% } %>
 
     <hr>
-    <div class="stop">STOP</div>
+    <div class="stop button">STOP</div>
 
   </body>
 </html>
