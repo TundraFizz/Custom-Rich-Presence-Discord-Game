@@ -1,13 +1,8 @@
 # Custom Rich Presence Discord Game
 
+```
+npm i -g yarn
+yarn
+```
+
 ```node build```
-
-```
-npm install -g nexe
-nexe --build
-```
-
-```
-npm install -g pkg
-pkg -t node9-win-x64 .
-```
