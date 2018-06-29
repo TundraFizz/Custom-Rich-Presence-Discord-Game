@@ -26,9 +26,7 @@ app.post("/test", function(req, res){
 
   }else if(rpc["clientID"] == id){
     // Change message for the current game
-
     rpc.setActivity(activity);
-
   }else{
     // Switch to a new game
     rpc.destroy(function(){
