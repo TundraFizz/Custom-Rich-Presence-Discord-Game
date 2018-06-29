@@ -1,4 +1,5 @@
 var app        = require("../server.js");
+var fs         = require("fs");
 var DiscordRPC = require("rich-presence-test");
 var rpc        = new DiscordRPC.Client({"transport": "ipc"});
 
@@ -47,14 +48,23 @@ app.post("/test", function(req, res){
     });
   }
 
-  res.json();
+  res.json({});
 });
 
 app.post("/stop", function(req, res){
   if(rpc["clientID"])
     rpc.destroy();
+  res.json({});
+});
+
+app.post("/config", function(req, res){
+  fs.createReadStream("./static/config.yml").pipe(fs.createWriteStream("./config.yml"));
+  res.json({});
 });
 
 app.get("/", function(req, res){
-  res.render("index.ejs", app["data"]);
+  res.render("index.ejs", {
+    "games"       : app["data"],
+    "configButton": app["configButton"]
+  });
 });
