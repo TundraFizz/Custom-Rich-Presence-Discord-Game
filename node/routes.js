@@ -57,14 +57,6 @@ app.post("/stop", function(req, res){
   res.json({});
 });
 
-app.post("/config", function(req, res){
-  fs.createReadStream("./static/config.yml").pipe(fs.createWriteStream("./config.yml"));
-  res.json({});
-});
-
 app.get("/", function(req, res){
-  res.render("index.ejs", {
-    "games"       : app["data"],
-    "configButton": app["configButton"]
-  });
+  res.render("index.ejs", {"games": app["data"]});
 });
