@@ -12,6 +12,7 @@ fs.readFileSync("./views/index.ejs"     , "utf-8");
 fs.readFileSync("./static/css/index.css", "utf-8");
 fs.readFileSync("./static/img/icon.jpg" , "utf-8");
 fs.readFileSync("./static/js/index.js"  , "utf-8");
+fs.readFileSync("./static/config.yml"   , "utf-8");
 
 fs.access("config.yml", function(err){
   // Check to see if config.yml already file exists for the application to read data from
