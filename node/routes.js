@@ -1,5 +1,5 @@
 var app        = require("../server.js");
-var DiscordRPC = require("discord-rpc");
+var DiscordRPC = require("rich-presence-test");
 var rpc        = new DiscordRPC.Client({"transport": "ipc"});
 
 app.post("/test", function(req, res){
