@@ -1,0 +1,26 @@
+- name: "Splatoon 2"
+  id: "461029893858131968"
+  top:
+    - "splsdfsdfat top 1"
+    - "splat top 2"
+  bot:
+    - "splat bot 1"
+    - "splat bot 2"
+
+- name: "Zelda: BotW"
+  id: "461408978400706570"
+  top:
+    - "botw top 1"
+    - "botw top 2"
+  bot:
+    - "botw bot 1"
+    - "botw bot 2"
+
+- name: "Super Smash Bros. Ultimate"
+  id: "461414353791483904"
+  top:
+    - "ssbu top 1"
+    - "ssbu top 2"
+  bot:
+    - "ssbu bot 1"
+    - "ssbu bot 2"
