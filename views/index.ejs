@@ -11,42 +11,42 @@
   </head>
 
   <body>
-    <% for(var i = 0; i < games.length; i++){ var game = games[i]; %>
-      <%if(i>0){%><hr><%}%>
-      <div id=<%= game["id"] %>>
-        <span><%= game["name"] %></span>
-
-        <table>
-          <thead></thead>
+    <div class="root">
+      <div class="container-left">
+        <table class="game-bar">
           <tbody>
-            <tr>
-              <td>Top Text</td>
-              <td>
-                <select class="top">
-                  <% for(var j = 0; j < game["top"].length; j++){ var top = game["top"][j]; %>
-                    <option><%= top %></option>
-                  <% } %>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td>Bot Text</td>
-              <td>
-                <select class="bot">
-                  <% for(var j = 0; j < game["bot"].length; j++){ var bot = game["bot"][j]; %>
-                    <option><%= bot %></option>
-                  <% } %>
-                </select>
-              </td>
-            </tr>
+            <% for(var i = 0; i < games.length; i++){ var game = games[i]; %>
+              <tr><td class="game" id=<%= game["id"] %>><%= game["name"] %></td></tr>
+            <% } %>
           </tbody>
         </table>
-
-        <div class="submit button">SUBMIT</div>
       </div>
-    <% } %>
 
-    <hr>
-    <div class="stop button">STOP</div>
+      <div class="container-right">
+        <div class="text-top">
+          <div>item</div>
+          <div>item</div>
+          <div>item</div>
+          <div>item</div>
+          <div>item</div>
+          <div>item</div>
+          <div>item</div>
+          <div>item</div>
+          <div>item</div>
+          <div>item</div>
+        </div>
+
+        <div class="text-bot">
+          <div>item</div>
+          <div>item</div>
+          <div>item</div>
+        </div>
+
+        <div class="two-buttons">
+          <div class="button submit">Submit</div>
+          <div class="button stop">Stop</div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
