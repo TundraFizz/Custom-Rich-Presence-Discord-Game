@@ -1,7 +1,7 @@
 - name: "Splatoon 2"
   id: "461029893858131968"
   top:
-    - "splsdfsdfat top 1"
+    - "splat top 1"
     - "splat top 2"
   bot:
     - "splat bot 1"
