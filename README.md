@@ -5,4 +5,5 @@ npm i -g yarn
 yarn
 ```
 
-```node build```
+```node run build```
+```node run clean```
