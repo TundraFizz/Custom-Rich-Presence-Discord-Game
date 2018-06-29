@@ -1,3 +1,87 @@
+body {
+  margin: 0;
+}
+
+.root {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  width: 100%;
+}
+
+.container-left {
+  flex-basis: auto;
+  flex-grow: 0;
+  height: 100vh;
+  float: left;
+}
+
+.container-right {
+  flex-basis: 0;
+  flex-grow: 1;
+  height: 100vh;
+  background-color: yellow;
+}
+
+.game-bar {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.game {
+  padding: 2px;
+  border: 1px solid black;
+  background-color: #c3c3c3;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+   user-select: none;
+   border-collapse: collapse;
+}
+
+.game:hover {
+  background-color: #dadada;
+}
+
+.game:active {
+  background-color: #909090;
+}
+
+.text-top, .text-bot, .two-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px 10px;
+
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.text-top > div {
+  width: 25%;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #2affff;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+   user-select: none;
+}
+
+.text-top > div:hover {
+  background-color: #8fffff;
+}
+
+.text-top > div:active {
+  background-color: #00e7e7;
+}
+
 .button {
   display: inline-block;
   padding: 2px;
