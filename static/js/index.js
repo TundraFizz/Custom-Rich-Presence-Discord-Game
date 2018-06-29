@@ -5,8 +5,6 @@ $(".submit").click(function(){
   var top = $($(".top", $(this).parent())[0]).val();
   var bot = $($(".bot", $(this).parent())[0]).val();
 
-  console.log(top);
-
   $.post("test", {
     "id" : id,
     "top": top,
