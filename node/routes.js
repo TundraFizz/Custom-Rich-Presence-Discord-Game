@@ -8,28 +8,26 @@ app.post("/test", function(req, res){
   var details = req["body"]["top"];
   var state   = req["body"]["bot"];
 
+  var activity = {
+    "largeImageKey": "icon",
+    "instance"     : false
+  };
+
+  if(details) activity["details"] = details;
+  if(state)   activity["state"]   = state;
+
   if(rpc["clientID"] == null){
     // New game from no game
     rpc.login(id);
 
     rpc.on("ready", () => {
-      rpc.setActivity({
-        "details"      : details,
-        "state"        : state,
-        "largeImageKey": "icon",
-        "instance"     : false,
-      });
+      rpc.setActivity(activity);
     });
 
   }else if(rpc["clientID"] == id){
     // Change message for the current game
 
-    rpc.setActivity({
-      "details"      : details,
-      "state"        : state,
-      "largeImageKey": "icon",
-      "instance"     : false,
-    });
+    rpc.setActivity(activity);
 
   }else{
     // Switch to a new game
@@ -38,12 +36,7 @@ app.post("/test", function(req, res){
       rpc.login(id);
 
       rpc.on("ready", () => {
-        rpc.setActivity({
-          "details"      : details,
-          "state"        : state,
-          "largeImageKey": "icon",
-          "instance"     : false,
-        });
+        rpc.setActivity(activity);
       });
     });
   }
