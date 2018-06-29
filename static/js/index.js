@@ -18,10 +18,4 @@ $(".stop").click(function(){
   $.post("stop");
 });
 
-$(".config").click(function(){
-  $.post("config", function(){
-    $(".remove-this").remove();
-  });
-});
-
 });
