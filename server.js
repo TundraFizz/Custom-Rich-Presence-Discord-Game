@@ -14,37 +14,27 @@ fs.readFileSync("./static/img/icon.jpg" , "utf-8");
 fs.readFileSync("./static/js/index.js"  , "utf-8");
 
 fs.access("config.yml", function(err){
-  // Check to see if a custom config file exists
-  // If it does, then load it. Otherwise, just use the default values
+  // Check to see if config.yml already file exists for the application to read data from
+  // If it doesn't exit, copy from the default configuration file and read that instead
   if(err){
-    module.exports["data"] = [{
-      "name": "splatoon2",
-      "id": "461029893858131968",
-      "top": ["splat top 1", "splat top 2"],
-      "bot": ["splat bot 1", "splat bot 2"]
-    },{
-      "name": "zeldabotw",
-      "id": "461408978400706570",
-      "top": ["botw top 1", "botw top 2"],
-      "bot": ["botw bot 1", "botw bot 2"]
-    },{
-      "name": "ssbu",
-      "id": "461414353791483904",
-      "top": ["ssbu top 1", "ssbu top 2"],
-      "bot": ["ssbu bot 1", "ssbu bot 2"]
-    }];
-    module.exports["configButton"] = true;
-
-    require("./node/routes.js"); // Include web routes third
-    app.listen(80);              // Start the server
-  }else{
-    fs.readFile("config.yml", "utf-8", function(err, data){
-      var doc = yaml.load(data);
-      module.exports["data"] = doc;
-      module.exports["configButton"] = false;
-
-      require("./node/routes.js"); // Include web routes third
-      app.listen(80);              // Start the server
+    var rs = fs.createReadStream("./static/config.yml");
+    var ws = fs.createWriteStream("./config.yml");
+    rs.pipe(ws);
+    ws.on("close", function(){
+      StartServer();
     });
-  }
+  }else
+    StartServer();
 });
+
+function StartServer(){
+  fs.readFile("config.yml", "utf-8", function(err, data){
+    var doc = yaml.load(data);
+    module.exports["data"] = doc;
+
+    require("./node/routes.js");
+    app.listen(80);
+    console.log("The application is now running");
+    console.log("Go to \"localhost\" in your browser");
+  });
+}
