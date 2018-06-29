@@ -17,7 +17,7 @@ fs.access("config.yml", function(err){
   // Check to see if a custom config file exists
   // If it does, then load it. Otherwise, just use the default values
   if(err){
-    module.exports.data = [{
+    module.exports["data"] = [{
       "name": "splatoon2",
       "id": "461029893858131968",
       "top": ["splat top 1", "splat top 2"],
@@ -33,13 +33,15 @@ fs.access("config.yml", function(err){
       "top": ["ssbu top 1", "ssbu top 2"],
       "bot": ["ssbu bot 1", "ssbu bot 2"]
     }];
+    module.exports["configButton"] = true;
 
     require("./node/routes.js"); // Include web routes third
     app.listen(80);              // Start the server
   }else{
     fs.readFile("config.yml", "utf-8", function(err, data){
       var doc = yaml.load(data);
-      module.exports.data = doc;
+      module.exports["data"] = doc;
+      module.exports["configButton"] = false;
 
       require("./node/routes.js"); // Include web routes third
       app.listen(80);              // Start the server
