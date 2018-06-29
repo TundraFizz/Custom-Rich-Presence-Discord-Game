@@ -45,8 +45,11 @@ app.post("/test", function(req, res){
 });
 
 app.post("/stop", function(req, res){
-  if(rpc["clientID"])
+  if(rpc["clientID"]){
     rpc.destroy();
+    rpc["clientID"] = null;
+  }
+
   res.json({});
 });
 
