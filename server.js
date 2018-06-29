@@ -13,7 +13,7 @@ fs.access("config.yml", function(err){
   // Check to see if config.yml already file exists for the application to read data from
   // If it doesn't exit, copy from the default configuration file and read that instead
   if(err){
-    fs.writeFile("config.yml", fs.readFileSync("./static/config.yml", "utf-8"), function(err){
+    fs.writeFile("config.yml", fs.readFileSync("./static/config/config.yml", "utf-8"), function(err){
       StartServer();
     });
   }else{
