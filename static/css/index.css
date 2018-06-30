@@ -60,8 +60,10 @@ body {
   justify-content: space-around;
 }
 
-.text-top > div {
-  width: 25%;
+.text-top > div, .text-bot > div {
+  flex-grow: 0;
+  margin: 4px;
+  padding: 2px 4px;
   text-align: center;
   border: 1px solid black;
   border-radius: 6px;
@@ -71,14 +73,14 @@ body {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-   user-select: none;
+  user-select: none;
 }
 
-.text-top > div:hover {
+.text-top > div:hover, .text-bot > div:hover {
   background-color: #8fffff;
 }
 
-.text-top > div:active {
+.text-top > div:active, .text-bot > div:active {
   background-color: #00e7e7;
 }
 
@@ -102,4 +104,8 @@ body {
 
 .button:active {
   background-color: gray;
+}
+
+.page {
+  display: none;
 }
