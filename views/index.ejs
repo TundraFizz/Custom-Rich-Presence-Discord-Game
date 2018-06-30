@@ -23,24 +23,20 @@
       </div>
 
       <div class="container-right">
-        <div class="text-top">
-          <div>item</div>
-          <div>item</div>
-          <div>item</div>
-          <div>item</div>
-          <div>item</div>
-          <div>item</div>
-          <div>item</div>
-          <div>item</div>
-          <div>item</div>
-          <div>item</div>
-        </div>
-
-        <div class="text-bot">
-          <div>item</div>
-          <div>item</div>
-          <div>item</div>
-        </div>
+        <% for(var i = 0; i < games.length; i++){ var game = games[i]; %>
+          <div class="page" page=<%= game["id"] %>>
+            <div class="text-top">
+              <% for(var j = 0; j < game["top"].length; j++){ var top = game["top"][j]; %>
+                <div class="select-top"><%= top %></div>
+              <% } %>
+            </div>
+            <div class="text-bot">
+              <% for(var j = 0; j < game["bot"].length; j++){ var bot = game["bot"][j]; %>
+                <div class="select-bot"><%= bot %></div>
+              <% } %>
+            </div>
+          </div>
+        <% } %>
 
         <div class="two-buttons">
           <div class="button submit">Submit</div>
