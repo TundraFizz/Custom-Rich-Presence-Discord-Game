@@ -3,18 +3,30 @@ var fs         = require("fs");
 var DiscordRPC = require("rich-presence-test");
 var rpc        = new DiscordRPC.Client({"transport": "ipc"});
 
+var details = null;
+var state   = null;
+
 app.post("/test", function(req, res){
   var id      = req["body"]["id"];
-  var details = req["body"]["top"];
-  var state   = req["body"]["bot"];
+  // var details = req["body"]["top"];
+  // var state   = req["body"]["bot"];
 
   var activity = {
     "largeImageKey": "icon",
     "instance"     : false
   };
 
-  if(details) activity["details"] = details;
-  if(state)   activity["state"]   = state;
+  if(req["body"]["top"] != "")
+    activity["details"] = req["body"]["top"];
+
+  if(req["body"]["bot"] != "")
+    activity["state"] = req["body"]["bot"];
+
+
+  // if(details) activity["details"] = details;
+  // if(state)   activity["state"]   = state;
+
+  console.log(activity);
 
   if(rpc["clientID"] == null){
     // New game from no game
